@@ -162,7 +162,8 @@ nums.forEach(num => list.insert(num));
 // console.log(list.getKth(4));
 // console.log(list.getKthToLast(3));
 // console.log(list.isEmpty());
-console.log(list.toArray());
+// console.log(list.toArray());
+console.log(list.containsDuplicates());
 
 list.insert(5);
 console.log(list.containsDuplicates());
