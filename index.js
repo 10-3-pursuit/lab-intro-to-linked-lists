@@ -157,8 +157,12 @@ nums.forEach(num => list.insert(num));
 // console.log(list.size());
 // console.log(list.delete());
 // console.log(list.getFirst());
-console.log(list.getLast());
-
+// console.log(list.getLast());
+// console.log(list.search(5));
+// console.log(list.getKth(4));
+// console.log(list.getKthToLast(3));
+// console.log(list.isEmpty());
+console.log(list.toArray());
 
 list.insert(5);
 console.log(list.containsDuplicates());
