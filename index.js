@@ -155,7 +155,9 @@ const panagram = [
 const list = new LinkedList();
 nums.forEach(num => list.insert(num));
 // console.log(list.size());
-console.log(list.delete());
+// console.log(list.delete());
+// console.log(list.getFirst());
+console.log(list.getLast());
 
 
 list.insert(5);
