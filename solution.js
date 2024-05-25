@@ -33,6 +33,10 @@ class LinkedList {
       return;
     } // but what if you want to delete data that's not in the first node?
     // iterate through list until finding key that's to be deleted
+    let currentNode = this.head; // this is supposed to set up a pointer because can't get to next node by skipping nodes bc not array so needs to start somewhere
+    while (currentNode.next) { // so if next node is not falsy (null in this case) continue loop
+
+    }
   }
 }
 
