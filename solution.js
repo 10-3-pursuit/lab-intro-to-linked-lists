@@ -102,6 +102,12 @@ class LinkedList {
   clear() { // replace linked list with null value (nothing) by making head equal null and since linkedList cn not get to next node until processing current node it'll make list have nothing
     return this.head = null;
   }
+  toArray() {
+
+  }
+  constainsDuplicates() {
+    
+  }
 }
 
 module.exports = { Node, LinkedList };
