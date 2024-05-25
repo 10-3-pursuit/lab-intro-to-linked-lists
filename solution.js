@@ -25,7 +25,7 @@ class LinkedList {
     }
     return count; // return count once it reaches the end (once it reaches a node with value null which means there is no node there)
   }
-  delete(data) {
+  delete(data) { // needs data parameter (this is what's to be deleted)
     let currentNode = this.head; // node becomes this.head with value of null at first;
     // this is supposed to set up a pointer because can't get to next node by skipping nodes bc not array so needs to start somewhere.
     if (!currentNode) return; //if node is falsy (null) it means there's nothing to delete
@@ -42,6 +42,9 @@ class LinkedList {
       }
       currentNode = currentNode.next;
     }
+  }
+  getFirst() { // get first which is the head
+    return this.head;
   }
 }
 
