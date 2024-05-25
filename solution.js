@@ -10,8 +10,7 @@ class LinkedList {
   constructor(head = null) {
     this.head = head;
   }
-    // insert a new node at the beginning of the list
-  insert(data) {
+  insert(data) { // insert a new node at the beginning of the list
     // create new instance of the node
     let newNode = new Node(data);
     newNode.next = this.head; // replace null value of node to make a new head to start LinkedList
@@ -25,6 +24,10 @@ class LinkedList {
       node = node.next; // once node is counted move to next node to see if it's falsy. If it is count it
     }
     return count; // return count once it reaches the end (once it reaches a node with value null which means there is no node there)
+  }
+  delete() {
+    let node = this.head; // node becomes this.head with value of null at first;
+    if (!node) return; //if node is falsy it means there's nothing to delete
   }
 }
 
