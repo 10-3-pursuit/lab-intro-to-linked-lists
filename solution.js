@@ -65,6 +65,18 @@ class LinkedList {
     // if couldn't find data return null;
     return null;
   }
+  getKth(k) { // parameter is position of node it's looking for
+    let currentNode = this.head; // pointer
+    let count = 1; // starts at 1 until reaches Kth: 1 is better than starting at 0 that way you don't have to make condition k-1. Putting k is more clear
+    while (currentNode !== null) { // while there are still nodes (bc if no node then value is null)
+      if (count === k) { // but if count is already k (user input) or reaches k after counting return current node
+          return currentNode; // this is node we want
+      }
+      count++; // if not k but it's also not null (which means there are more nodes) increase count by one
+      currentNode = currentNode.next; // and move to next node. Once count reaches k it'll return currentNode it's at
+    }
+    return null; // if no kth node it'll return null
+  }
 }
 
 module.exports = { Node, LinkedList };
