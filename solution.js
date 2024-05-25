@@ -26,14 +26,15 @@ class LinkedList {
     return count; // return count once it reaches the end (once it reaches a node with value null which means there is no node there)
   }
   delete(data) {
-    let node = this.head; // node becomes this.head with value of null at first;
-    if (!node) return; //if node is falsy (null) it means there's nothing to delete
-    if (this.head.data === data) { // if the key for the first node matches inputted data (dotting into data which represents actual data)
-      this.head = this.head.next; // make current head equal next head so it deletes the original head
+    let currentNode = this.head; // node becomes this.head with value of null at first;
+    // this is supposed to set up a pointer because can't get to next node by skipping nodes bc not array so needs to start somewhere.
+    if (!currentNode) return; //if node is falsy (null) it means there's nothing to delete
+    if (currentNode.data === data) { // if the key for the first node matches inputted data (dotting into data which represents actual data)
+      currentNode = currentNode.next; // make current head equal next head so it deletes the original head
       return;
     } // but what if you want to delete data that's not in the first node?
     // iterate through list until finding key that's to be deleted
-    let currentNode = this.head; // this is supposed to set up a pointer because can't get to next node by skipping nodes bc not array so needs to start somewhere
+    //This loop is only if node to be deleted isn't the head
     while (currentNode.next) { // so if next node is not falsy (null in this case) continue loop
       if (currentNode.next.data === data) {
         currentNode.next = currentNode.next.next; // deletes the node where the data is at (the next node) and moves to the next next node
