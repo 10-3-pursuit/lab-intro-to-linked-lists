@@ -77,6 +77,25 @@ class LinkedList {
     }
     return null; // if no kth node it'll return null
   }
+  getKthToLast(k) {
+      // If the list is empty, return null
+      if (!this.head) return null;
+
+      let length = 0;
+      let current = this.head; // pointer at start
+      while (current) { // get size (use size method for refernce)
+        length++;
+        current = current.next;
+      }
+      if (k >= length) return null; // if bigger than length it is null bc node won't exist
+
+      current = this.head; // current is now at the tail but it will get reassigned as the head in order to count backwards from there
+      for (let i = 0; i < length - k - 1; i++) { // loop backwards
+        current = current.next;
+      }
+    // the node at position length - k - 1 which is actully k because started count at 0
+    return current;
+  }
 }
 
 module.exports = { Node, LinkedList };
