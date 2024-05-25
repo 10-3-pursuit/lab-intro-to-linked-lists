@@ -96,6 +96,9 @@ class LinkedList {
     // the node at position length - k - 1 which is actully k because started count at 0
     return current;
   }
+  isEmpty() { // expect(newList.isEmpty()).toBe(true);
+    return this.head === null; // returns true if empty
+  }
 }
 
 module.exports = { Node, LinkedList };
