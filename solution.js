@@ -99,6 +99,9 @@ class LinkedList {
   isEmpty() { // expect(newList.isEmpty()).toBe(true);
     return this.head === null; // returns true if empty
   }
+  clear() { // replace linked list with null value (nothing) by making head equal null and since linkedList cn not get to next node until processing current node it'll make list have nothing
+    return this.head = null;
+  }
 }
 
 module.exports = { Node, LinkedList };
