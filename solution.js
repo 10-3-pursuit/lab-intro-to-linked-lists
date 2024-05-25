@@ -46,6 +46,13 @@ class LinkedList {
   getFirst() { // get first which is the head
     return this.head;
   }
+  getLast() {
+    // the next one is the last one if there are only 2 nodes for example so maybe reassign the head to the next one so it moves to the next one as long as not null
+    while(this.head.next) {
+      this.head = this.head.next;
+    }
+    return this.head;
+  }
 }
 
 module.exports = { Node, LinkedList };
