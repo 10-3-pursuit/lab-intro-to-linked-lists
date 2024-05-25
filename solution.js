@@ -28,6 +28,11 @@ class LinkedList {
   delete() {
     let node = this.head; // node becomes this.head with value of null at first;
     if (!node) return; //if node is falsy (null) it means there's nothing to delete
+    if (this.head.data === data) { // if the key for the first node matches inputted data
+      this.head = this.head.next; // make current head equal next head so it deletes the original head
+      return;
+    } // but what if you want to delete data that's not in the first node?
+    // iterate through list until finding key that's to be deleted
   }
 }
 
