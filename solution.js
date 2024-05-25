@@ -53,6 +53,18 @@ class LinkedList {
     }
     return this.head;
   }
+  search(data) { // find element by key
+    // make pointer
+    let currentNode = this.head; // needs to start at head
+    while (currentNode) { // loop runs until reaches tail (after the tail value is null)
+      if (currentNode.data === data) { // if head matches search input return it
+        return currentNode;
+      } // if head doesn't match data go to next node
+      currentNode = currentNode.next
+    }
+    // if couldn't find data return null;
+    return null;
+  }
 }
 
 module.exports = { Node, LinkedList };
