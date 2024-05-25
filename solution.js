@@ -27,7 +27,7 @@ class LinkedList {
   }
   delete() {
     let node = this.head; // node becomes this.head with value of null at first;
-    if (!node) return; //if node is falsy it means there's nothing to delete
+    if (!node) return; //if node is falsy (null) it means there's nothing to delete
   }
 }
 
