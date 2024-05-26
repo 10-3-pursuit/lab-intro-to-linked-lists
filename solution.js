@@ -93,31 +93,40 @@ class LinkedList {
     return this.head = null;
   }
   toArray() {
-    let array = []; // to store nodes using .push()
-    while (this.head !== null) { // while there are nodes
-      //this.head = node
-      //this.head.data = value of node
-      array.push(this.head.data); // push value of node into array
-      this.head = this.head.next; // move to next node then start loop all over again
+    let array = [];
+    while (this.head !== null) {
+      array.push(this.head.data);
+      this.head = this.head.next;
     }
-    return array; // once you get to node that is null (end of list return the array bc entire linked list has been processed)
+    return array;
   }
   containsDuplicates() {
-    let currentNode = this.head; // pointer
-
-    while (currentNode) { // while current node isn't null
+    let currentNode = this.head;
+    while (currentNode) {
       let nextNode = currentNode.next;
-      // do a while loop to check if currentNode.data is equla to nextNode.data
-      while (nextNode) { // and while next node isn't null (if it is it's not a duplicate and there is no next null)
-        if (currentNode.data === nextNode.data) { //if it equals eachother there's a duplicate
-          return true; // means found a duplicate
+      while (nextNode) {
+        if (currentNode.data === nextNode.data) {
+          return true;
         }
-          nextNode = nextNode.next; // then move to next node after nextNode.next
+          nextNode = nextNode.next;
       }
-      currentNode = currentNode.next; // Move to the next node after currentNode.next (and after doing the loop for next node to check if it's duplicat)
+      currentNode = currentNode.next;
     }
-    return false; // after going through the loops there were no duplicates found 
+    return false;
   }  
 }
+
+// --- make instances of new Node and LinkedList by using Nodes as "elements" of the LinkedList ---
+
+let head = new Node(words[0]); // make head node with the first word
+let tail = head; // tail as the head so that it isn't null and there's a next node
+let linkedList = new LinkedList(head); // make linked list with the head node
+for (let i = 1; i < words.length; i++) {
+  let currentNode = new Node(words[i]); // create new node for the current word
+  tail.next = currentNode; // current node is the end of the list
+  tail = currentNode; // update the tail to the current node so it finishes iterating through whole array 9 to convert to linkedList
+}
+
+console.log(linkedList);
 
 module.exports = { Node, LinkedList };
