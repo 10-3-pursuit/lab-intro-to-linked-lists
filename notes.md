@@ -123,5 +123,95 @@ class LinkedList {
   }  
 }
 
+// words array
+// --- make instances of new Node and LinkedList by using Nodes as "elements" of the LinkedList ---
+
+let head = new Node(words[0]); // make head node with the first word
+let tail = head; // tail as the head so that it isn't null and there's a next node
+let linkedListWords = new LinkedList(head); // make linked list with the head node
+for (let i = 1; i < words.length; i++) {
+  let currentNode = new Node(words[i]); // create new node for the current word
+  tail.next = currentNode; // current node is the end of the list
+  tail = currentNode; // update the tail to the current node so it finishes iterating through whole array 9 to convert to linkedList
+}
+
+// console.log(linkedList);
+console.log(inspect(linkedListWords, { showHidden: true, colors: true, depth: Infinity }));
+
+// nums array
+let headNums = new Node(nums[0]); // make head node with the first word
+let tailNums = headNums ; // tail as the head so that it isn't null and there's a next node
+let linkedListNums = new LinkedList(headNums); // make linked list with the head node
+for (let i = 1; i < nums.length; i++) {
+  let currentNode = new Node(nums[i]); // create new node for the current word
+  tailNums.next = currentNode; // current node is the end of the list
+  tailNums = currentNode; // update the tail to the current node so it finishes iterating through whole array 9 to convert to linkedList
+}
+console.log(inspect(linkedListNums, { showHidden: true, colors: true, depth: Infinity }));
+
+// --- Logged to the Console when node solution.js runs ---
+/*
+LinkedList {
+  head: Node {
+    data: 'the',
+    next: Node {
+      data: 'quick',
+      next: Node {
+        data: 'brown',
+        next: Node {
+          data: 'fox',
+          next: Node {
+            data: 'jumps',
+            next: Node {
+              data: 'over',
+              next: Node {
+                data: 'the',
+                next: Node {
+                  data: 'lazy',
+                  next: Node { data: 'dog', next: null }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+LinkedList {
+  head: Node {
+    data: 1,
+    next: Node {
+      data: 2,
+      next: Node {
+        data: 3,
+        next: Node {
+          data: 4,
+          next: Node {
+            data: 5,
+            next: Node {
+              data: 6,
+              next: Node {
+                data: 7,
+                next: Node {
+                  data: 8,
+                  next: Node {
+                    data: 9,
+                    next: Node {
+                      data: 10,
+                      next: Node { data: 0, next: null }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+*/
+
 module.exports = { Node, LinkedList };
 ```

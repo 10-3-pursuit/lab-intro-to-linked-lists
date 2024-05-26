@@ -117,29 +117,26 @@ class LinkedList {
   }  
 }
 
-// words array
-// --- make instances of new Node and LinkedList by using Nodes as "elements" of the LinkedList ---
-
-let head = new Node(words[0]); // make head node with the first word
-let tail = head; // tail as the head so that it isn't null and there's a next node
-let linkedListWords = new LinkedList(head); // make linked list with the head node
+// words array to words linked list
+let head = new Node(words[0]);
+let tail = head;
+let linkedListWords = new LinkedList(head);
 for (let i = 1; i < words.length; i++) {
-  let currentNode = new Node(words[i]); // create new node for the current word
-  tail.next = currentNode; // current node is the end of the list
-  tail = currentNode; // update the tail to the current node so it finishes iterating through whole array 9 to convert to linkedList
+  let currentNode = new Node(words[i]);
+  tail.next = currentNode;
+  tail = currentNode;
 }
 
-// console.log(linkedList);
 console.log(inspect(linkedListWords, { showHidden: true, colors: true, depth: Infinity }));
 
-// nums array
-let headNums = new Node(nums[0]); // make head node with the first word
-let tailNums = headNums ; // tail as the head so that it isn't null and there's a next node
-let linkedListNums = new LinkedList(headNums); // make linked list with the head node
+// nums array to words linked list
+let headNums = new Node(nums[0]);
+let tailNums = headNums;
+let linkedListNums = new LinkedList(headNums);
 for (let i = 1; i < nums.length; i++) {
-  let currentNode = new Node(nums[i]); // create new node for the current word
-  tailNums.next = currentNode; // current node is the end of the list
-  tailNums = currentNode; // update the tail to the current node so it finishes iterating through whole array 9 to convert to linkedList
+  let currentNode = new Node(nums[i]);
+  tailNums.next = currentNode;
+  tailNums = currentNode;
 }
 console.log(inspect(linkedListNums, { showHidden: true, colors: true, depth: Infinity }));
 
