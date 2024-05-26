@@ -102,9 +102,22 @@ class LinkedList {
     }
     return array; // once you get to node that is null (end of list return the array bc entire linked list has been processed)
   }
-  constainsDuplicates() {
+  containsDuplicates() {
+    let currentNode = this.head; // pointer
 
-  }
+    while (currentNode) { // while current node isn't null
+      let nextNode = currentNode.next;
+      // do a while loop to check if currentNode.data is equla to nextNode.data
+      while (nextNode) { // and while next node isn't null (if it is it's not a duplicate and there is no next null)
+        if (currentNode.data === nextNode.data) { //if it equals eachother there's a duplicate
+          return true; // means found a duplicate
+        }
+          nextNode = nextNode.next; // then move to next node after nextNode.next
+      }
+      currentNode = currentNode.next; // Move to the next node after currentNode.next (and after doing the loop for next node to check if it's duplicat)
+    }
+    return false; // after going through the loops there were no duplicates found 
+  }  
 }
 
 module.exports = { Node, LinkedList };
