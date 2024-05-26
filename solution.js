@@ -1,4 +1,5 @@
 const { nums, words } = require("./data/data.js");
+const { inspect } = require("util");
 
 class Node {
   constructor(data) {
@@ -127,6 +128,38 @@ for (let i = 1; i < words.length; i++) {
   tail = currentNode; // update the tail to the current node so it finishes iterating through whole array 9 to convert to linkedList
 }
 
-console.log(linkedList);
+// console.log(linkedList);
+console.log(inspect(linkedList, { showHidden: true, colors: true, depth: Infinity }));
+
+// --- Logged to the Console when node solution.js runs ---
+/*
+LinkedList {
+  head: Node {
+    data: 'the',
+    next: Node {
+      data: 'quick',
+      next: Node {
+        data: 'brown',
+        next: Node {
+          data: 'fox',
+          next: Node {
+            data: 'jumps',
+            next: Node {
+              data: 'over',
+              next: Node {
+                data: 'the',
+                next: Node {
+                  data: 'lazy',
+                  next: Node { data: 'dog', next: null }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+*/ 
 
 module.exports = { Node, LinkedList };

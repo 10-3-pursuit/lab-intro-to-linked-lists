@@ -7,7 +7,6 @@
     "test": "jest --runInBand",
     "watch": "jest --watchAll"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joinpursuit/m6-array-method-drills.git"
