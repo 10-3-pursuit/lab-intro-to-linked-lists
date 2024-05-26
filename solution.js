@@ -93,7 +93,14 @@ class LinkedList {
     return this.head = null;
   }
   toArray() {
-
+    let array = []; // to store nodes using .push()
+    while (this.head !== null) { // while there are nodes
+      //this.head = node
+      //this.head.data = value of node
+      array.push(this.head.data); // push value of node into array
+      this.head = this.head.next; // move to next node then start loop all over again
+    }
+    return array; // once you get to node that is null (end of list return the array bc entire linked list has been processed)
   }
   constainsDuplicates() {
 
