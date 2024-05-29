@@ -91,6 +91,10 @@ class LinkedList {
     let arr = this.toArray();
     return this.search(arr[k - 1])
   }
+  getKthToLast(k) {
+    let arr = this.toArray();
+    return this.search(arr[arr.length - k - 1])
+  }
 }
 
 module.exports = {
