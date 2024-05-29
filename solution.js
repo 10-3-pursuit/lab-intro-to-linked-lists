@@ -60,7 +60,6 @@ class LinkedList {
     }
     return node;
   }
-
   isEmpty() {
     return this.head === null;
   }
@@ -88,8 +87,10 @@ class LinkedList {
     })
     return duplicates;
   }
-
-
+  getKth(k) {
+    let arr = this.toArray();
+    return this.search(arr[k - 1])
+  }
 }
 
 module.exports = {
