@@ -19,6 +19,15 @@ class LinkedList {
       this.head = newNode;
     }
   }
+  size() {
+    let count = 0;
+    let node = this.head;
+    while (node) {
+      count++;
+      node = node.next;
+    }
+    return count;
+  }
 }
 
 module.exports = {
