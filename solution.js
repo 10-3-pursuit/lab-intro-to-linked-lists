@@ -60,6 +60,11 @@ class LinkedList {
     }
     return node;
   }
+
+  isEmpty() {
+    return this.head === null;
+  }
+
 }
 
 module.exports = {
