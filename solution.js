@@ -42,6 +42,9 @@ class LinkedList {
     }
     node.next = foundNode.next;
   }
+  getFirst() {
+    return this.head;
+  }
 }
 
 module.exports = {
