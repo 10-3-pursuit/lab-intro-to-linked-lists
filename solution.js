@@ -77,6 +77,17 @@ class LinkedList {
     }
     return arr;
   }
+  containsDuplicates() {
+    let duplicates = false;
+    const arr = this.toArray();
+    arr.forEach((node) => {
+      if (arr.filter((node2) => node === node2).length > 1) {
+        duplicates = true;
+        return;
+      }
+    })
+    return duplicates;
+  }
 
 
 }
