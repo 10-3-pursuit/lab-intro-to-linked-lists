@@ -64,6 +64,10 @@ class LinkedList {
   isEmpty() {
     return this.head === null;
   }
+  clear() {
+    this.head = null;
+  }
+
 
 }
 
